@@ -1,0 +1,110 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{tipa}
+\usepackage{fullpage,amssymb,amsfonts,amsmath,ifthen,delarray,multicol,booktabs,covington,parsetree,fixltx2e,xunicode,fontspec}
+
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont{Minion Pro}
+\newfontfamily\phfont{Junicode}
+
+\title{Old Saxon Pronunciation}
+\author{Pascal Matheis}
+\date{}
+
+\newcommand{\becomes}{\ensuremath{\rightarrow}}
+\renewcommand{\labelitemi}{$*$}
+
+\usepackage{ifthen,delarray}
+\newcommand{\phonarr}[1]{
+  \ifthenelse{\equal{#1}{}}{}{\ensuremath{
+    \begin{array}[c][ {l} ]
+      #1
+    \end{array}
+  }}
+}
+
+\newcommand{\genrule}[4]{
+  #1\ $\to$\ #2\ /\ 
+  #3\ $\rule{1em}{0.5pt}$\ #4
+}
+
+\newcommand{\phonrule}[4]{\genrule{\textipa{#1}}{\textipa{#2}}{\textipa{#3}}{\textipa{#4}}}
+\newcommand{\featrule}[4]{\phonrule{\phonarr{#1}}{\phonarr{#2}}{\phonarr{#3}}{\phonarr{#4}}}
+\newcommand{\phonmap}[2]{\textipa{#1}\ $\to$\ \textipa{#2}}
+
+\def\ant{\rm{ant.}}
+\def\back{\rm{back}}
+\def\cons{\rm{cons.}}
+\def\cont{\rm{cont.\ acoust.}}
+\def\cor{\rm{cor.}}
+\def\dist{\rm{dist.}}
+\def\front{\rm{front}}
+\def\high{\rm{high}}
+\def\lab{\rm{lab.}}
+\def\lat{\rm{lat.}}
+\def\low{\rm{low}}
+\def\nas{\rm{nas.}}
+\def\round{\rm{round}}
+\def\son{\rm{son.}}
+\def\syll{\rm{syll.}}
+\def\voice{\rm{voice}}
+
+\begin{document}
+\fontspec[Numbers={OldStyle}]{Minion Pro}
+\maketitle
+\thispagestyle{empty}
+
+\begin{multicols}{2}
+\section*{Consonants}
+
+\begin{tabular}{c c}
+\toprule
+graph & phones \\ \midrule
+<p> & [p] \\
+<b> & [b] \\
+<m> & [m] \\
+<uu, u> & [w] \\
+<f> & [f] \\
+<{\phfont ƀ}, b> & [v] \\
+<th> & [þ] \\
+<ð> & [þ] \\
+<t> & [t] \\
+<d> & [d] \\
+<c, z> & [ts] \\
+<s> & [s] \\
+<n> & [n] \\
+<ng> & [ŋg] \\
+<l> & [l] \\
+<r> & [r] \\
+<k, c, q> & [k] \\
+<g> & [j] ($\rule{0.5em}{0.5pt}$\{i,e\}), [ç] (\{i,e\}$\rule{0.5em}{0.5pt}$), [{\phfont ɣ}] \\
+<h> & [h] ({\sc σi}), [ç] (\{i,e\}$\rule{0.5em}{0.5pt}$), [x] (\{a,o,u\}$\rule{0.5em}{0.5pt}$) \\
+\bottomrule
+\end{tabular}
+Note: all syllable-final consonants are voiceless, fricatives are voiced intervocalically.
+
+\section*{Vowels}
+\begin{tabular}{c c}
+\toprule
+graph & phone \\ \midrule
+<ī> & [i:] \\
+<i> & [{\i}] \\
+<ē> & [e:] \\
+<e> & [ε] \\
+<ā> & [\textipa{A}] \\
+<a> & [a] \\
+<ō> & [o:] \\
+<o> & [{\phfont ɔ}] \\
+<ū> & [u:] \\
+<u, o> & [{\phfont ʊ}] \\
+<ie> & [i{\phfont ə}] \\
+<io> & [i{\phfont ʌ}] \\
+<iu> & [i{\phfont ʉ}] \\
+<uo, ua> & [u{\phfont ǝ}] \\
+\bottomrule
+\end{tabular}
+
+\end{multicols}
+\end{document}
