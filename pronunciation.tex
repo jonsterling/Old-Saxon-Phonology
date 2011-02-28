@@ -3,7 +3,7 @@
 
 \documentclass[11pt,letterpaper]{article}
 \usepackage[T1]{tipa}
-\usepackage{fullpage,amssymb,amsfonts,amsmath,ifthen,delarray,multicol,booktabs,covington,parsetree,fixltx2e,xunicode,fontspec}
+\usepackage{fullpage,amssymb,amsfonts,amsmath,multicol,booktabs,fixltx2e,xunicode,fontspec}
 
 \defaultfontfeatures{Mapping=tex-text}
 \setmainfont{Minion Pro}
@@ -12,44 +12,6 @@
 \title{Old Saxon Pronunciation}
 \author{Pascal Matheis}
 \date{}
-
-\newcommand{\becomes}{\ensuremath{\rightarrow}}
-\renewcommand{\labelitemi}{$*$}
-
-\usepackage{ifthen,delarray}
-\newcommand{\phonarr}[1]{
-  \ifthenelse{\equal{#1}{}}{}{\ensuremath{
-    \begin{array}[c][ {l} ]
-      #1
-    \end{array}
-  }}
-}
-
-\newcommand{\genrule}[4]{
-  #1\ $\to$\ #2\ /\ 
-  #3\ $\rule{1em}{0.5pt}$\ #4
-}
-
-\newcommand{\phonrule}[4]{\genrule{\textipa{#1}}{\textipa{#2}}{\textipa{#3}}{\textipa{#4}}}
-\newcommand{\featrule}[4]{\phonrule{\phonarr{#1}}{\phonarr{#2}}{\phonarr{#3}}{\phonarr{#4}}}
-\newcommand{\phonmap}[2]{\textipa{#1}\ $\to$\ \textipa{#2}}
-
-\def\ant{\rm{ant.}}
-\def\back{\rm{back}}
-\def\cons{\rm{cons.}}
-\def\cont{\rm{cont.\ acoust.}}
-\def\cor{\rm{cor.}}
-\def\dist{\rm{dist.}}
-\def\front{\rm{front}}
-\def\high{\rm{high}}
-\def\lab{\rm{lab.}}
-\def\lat{\rm{lat.}}
-\def\low{\rm{low}}
-\def\nas{\rm{nas.}}
-\def\round{\rm{round}}
-\def\son{\rm{son.}}
-\def\syll{\rm{syll.}}
-\def\voice{\rm{voice}}
 
 \begin{document}
 \fontspec[Numbers={OldStyle}]{Minion Pro}
